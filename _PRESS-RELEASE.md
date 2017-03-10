@@ -18,27 +18,36 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+  Check Your Weather!
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  My product will allow everyone to check the weather in their area.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  Check Your Weather allows you to search for the weather of any location across the world. My product will allow you to understand how you should be spending your day at any particular location that you choose. 
 
 ## Problem ##
   > Describe the problem your product solves.
+  My product allows users to search for the weather at a particular location. It solves a variety of problems from making sure that you don't ruin your clothes in the rain to making sure that your family is dressed properly for the amazing vacation day that they are about to spend. 
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+  The user will be allowed to type in a particular location and receive the weather at that location. 
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+  Rain or shine Check Your Weather will let you know what the world looks like on the outside, while you are on the inside. 
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
+All you need to do is make and account and sign in. From that point on you will have the weather at your fingertips. 
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  Wow! I never knew that it could be so easy to know what the weather was. Thanks to Check Your Weather, I now have all of the information that I need to take on the outside world. 
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+  Make sure to always Check Your Weather to have the day that you always dreamed of. Now head on outside and take on what you already know, the weather. 
