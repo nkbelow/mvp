@@ -4,6 +4,10 @@
 logs
 *.log
 
+#API KEY
+react-check-your-weather/src/client/app/weatherAPIKey.js
+
+
 # Runtime data
 pids
 *.pid
@@ -21,6 +25,7 @@ coverage
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 build/
 dist/
+src/client/public/bundle.js
 
 # Dependency directorys
 # Deployed apps should consider commenting these lines out:
