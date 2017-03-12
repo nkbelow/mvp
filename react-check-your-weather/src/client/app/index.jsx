@@ -13,7 +13,8 @@ class App extends React.Component {
 
     this.state = {
       cityName: '',
-      weatherData: []
+      weatherData: [],
+      comments: []
     }
   }
 
@@ -43,11 +44,28 @@ class App extends React.Component {
       success: (data) => {
         console.log(data);
       },
-      error: (error) => {
+      error: (error, data) => {
+        console.log(data);
         console.log('this is an error', error);
       }
     })
-      
+  }
+  getComments() {
+    var url = 'http://127.0.0.1:3000/comment';
+    $.ajax({
+      url: url,
+      type: 'GET',
+      success: (data) => {
+        this.setState({
+          comments: data
+        })
+        console.log(data);
+      },
+      error: (error, data) => {
+        console.log(data);
+        console.log('this is an error', error);
+      }
+    })
   }
 
   render () {
@@ -57,7 +75,7 @@ class App extends React.Component {
     <SearchBar addWeather={this.addWeatherResults.bind(this)}/>
     <Weather weatherResults={this.state.weatherData}/>
     <CommentMenu addComment={this.addCommentText.bind(this)}/>
-    <CommentList />
+    <CommentList comments={this.state.comments} getComments={this.getComments.bind(this)}/>
     </div>
     )
   }

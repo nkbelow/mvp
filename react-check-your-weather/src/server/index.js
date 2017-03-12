@@ -2,7 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const getWeather = require('./WeatherDataRequest');
-const mongo = require('../mongo/mongoFile.js');
+const mongo = require('./../mongo/mongoFile.js');
 
 const app = express();
 
@@ -24,15 +24,15 @@ app.get('/', function(req, res) {
 });
 
 app.get('/comment', function(req, res) {
-  console.log('hey');
-  res.send('hello');
+  mongo.selectAll(function(err, comments) {
+    console.log(comments);
+    let desired = JSON.stringify(comments);
+    res.send(desired);
+  });
+  
 });
 
 app.get('/weather', function(req, res) {
-  // getWeather(function(req, weather) {
-  //   console.log('this is req', req);
-  //   console.log('this is data', weather);
-  // });
   console.log('that was the weather');
   res.send('this went through');
 });
@@ -44,8 +44,17 @@ app.post('/comment', function(req, res) {
   });
   req.on('end', () => {
     console.log(data);
+    var Comment = new mongo.comment({text: data});
+    Comment.save(function(err, Comment) {
+      if (err) {
+        throw err;
+      } else {
+        console.log(Comment.text);
+      }
+    });
+    res.send(data);
   });
-  console.log('this is a posted comment');
+  
 });
 
 app.listen(3000, function() {

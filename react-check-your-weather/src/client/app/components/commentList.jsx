@@ -1,12 +1,22 @@
 import React from 'react';
 
-const CommentList = (props) => {
+class CommentList extends React.Component {
+  constructor(props) {
+    super(props)
+  }
 
-  return (
-    <div> 
-    <button type='button'> Get Comments </button>
-    </div>
-  )
+  getComments (e) {
+    this.props.getComments();
+  }
+
+  render() {
+    return (
+      <div> 
+      <button type='button' onClick={this.getComments.bind(this)}> Get Comments </button>
+      {this.props.comments}
+      </div>
+    )
+  }
 }
 
 
