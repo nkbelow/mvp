@@ -4,7 +4,7 @@ const CommentList = (props) => {
 
   return (
     <div> 
-
+    <button type='button'> Get Comments </button>
     </div>
   )
 }

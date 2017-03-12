@@ -29,15 +29,22 @@ app.get('/comment', function(req, res) {
 });
 
 app.get('/weather', function(req, res) {
-  getWeather(function(req, weather) {
-    console.log('this is req', req);
-    console.log('this is data', weather);
-  });
+  // getWeather(function(req, weather) {
+  //   console.log('this is req', req);
+  //   console.log('this is data', weather);
+  // });
   console.log('that was the weather');
   res.send('this went through');
 });
 
 app.post('/comment', function(req, res) {
+  let data = '';
+  req.on('data', (chunk) => {
+    data += chunk;
+  });
+  req.on('end', () => {
+    console.log(data);
+  });
   console.log('this is a posted comment');
 });
 

@@ -5,38 +5,49 @@ import Weather from './components/weather.jsx';
 import CommentMenu from './components/commentMenu.jsx';
 import CommentList from './components/commentList.jsx';
 import $ from 'jquery';
-import apiKey from './weatherAPIKey'
+import apiKey from './weatherAPIKey';
 
 class App extends React.Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      cityName: '',
+      weatherData: []
+    }
   }
 
   addWeatherResults(query) {
-    var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + query + '&appid=' + apiKey;
+    var url = 'http://api.wunderground.com/api/' + apiKey + '/forecast10day/q/CA/' + query + '.json';
 
-    $.getJSON(url).then((data) => {
-      console.log(data)
+    $.ajax({
+      url: url,
+      type: 'GET',
+      Contenttype: 'application/json',
+      success: (data) => {
+        this.setState({
+          cityName: query,
+          weatherData: data.forecast.txt_forecast.forecastday
+        });
+        console.log(data);
+      }
     });
   }
 
-  //   $.ajax({
-  //     url: 'http://api.openweathermap.org/data/2.5/weather?q=' + query + '&appid=' + apiKey,
-  //     contentType: 'application/json',
-  //     datatype: json,
-  //     type: 'GET',
-  //     Cross,
-  //     success: (res) => {
-  //       console.log(res);
-  //     },
-  //     error: () => {
-  //       console.log('this is an error');
-  //     }
-  //   }); 
-  // }
-
   addCommentText(comment) {
-    console.log(comment)
+    var url = 'http://127.0.0.1:3000/comment';
+    $.ajax({
+      url: url,
+      type: 'POST',
+      data: comment,
+      success: (data) => {
+        console.log(data);
+      },
+      error: (error) => {
+        console.log('this is an error', error);
+      }
+    })
+      
   }
 
   render () {
@@ -44,7 +55,7 @@ class App extends React.Component {
     <div> 
     <h1>Check Your Weather </h1>
     <SearchBar addWeather={this.addWeatherResults.bind(this)}/>
-    <Weather />
+    <Weather weatherResults={this.state.weatherData}/>
     <CommentMenu addComment={this.addCommentText.bind(this)}/>
     <CommentList />
     </div>

@@ -15,8 +15,9 @@ class CommentMenu extends React.Component {
   render() {
     return (
       <div id='commentMenu'> 
-        <form action='127.0.0.1:3000/comment' id='commentForm' >
-        
+      
+        <form id='commentForm' >
+        <h4> Let Us Know How Your Day Was </h4>
         <textarea name='comment' form='commentForm' ref='comment'>
         </textarea>
         </form>
