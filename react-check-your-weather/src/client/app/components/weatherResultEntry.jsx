@@ -10,8 +10,8 @@ class WeatherResultEntry extends React.Component {
   render() {
     return (
       <tr>
-      <td>{this.props.forecast}</td>
-      <td>{this.props.timeOfDay}</td>
+      <td className='col-md-8'>{this.props.forecast}</td>
+      <td className='col-md-4'>{this.props.timeOfDay}</td>
       </tr>
     )
   }

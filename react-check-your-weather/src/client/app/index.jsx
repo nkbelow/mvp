@@ -14,7 +14,8 @@ class App extends React.Component {
     this.state = {
       cityName: '',
       weatherData: [],
-      comments: []
+      comments: [],
+      showHead: false
     }
   }
 
@@ -28,7 +29,8 @@ class App extends React.Component {
       success: (data) => {
         this.setState({
           cityName: query,
-          weatherData: data.forecast.txt_forecast.forecastday
+          weatherData: data.forecast.txt_forecast.forecastday,
+          showHead: true
         });
         console.log(data);
       }
@@ -57,7 +59,7 @@ class App extends React.Component {
       type: 'GET',
       success: (data) => {
         this.setState({
-          comments: data
+          comments: JSON.parse(data)
         })
         console.log(data);
       },
@@ -71,11 +73,11 @@ class App extends React.Component {
   render () {
     return (
     <div> 
-    <h1>Check Your Weather </h1>
+    <h1>Small Talk</h1>
+    <CommentMenu addComment={this.addCommentText.bind(this)} getComments={this.getComments.bind(this)} />
+    <CommentList comments={this.state.comments} />
     <SearchBar addWeather={this.addWeatherResults.bind(this)}/>
-    <Weather weatherResults={this.state.weatherData}/>
-    <CommentMenu addComment={this.addCommentText.bind(this)}/>
-    <CommentList comments={this.state.comments} getComments={this.getComments.bind(this)}/>
+    <Weather cityName={this.state.cityName} weatherResults={this.state.weatherData} headers={this.state.showHead} />
     </div>
     )
   }

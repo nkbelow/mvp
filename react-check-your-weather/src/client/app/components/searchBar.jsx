@@ -16,8 +16,13 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div id='searchBar'>
+      <h2> Find Your City Here </h2>
+      <div>
         <input type='text' ref='weatherQuery' placeholder='Enter your city here'/>
-        <button type='button' onClick={this.queryWeather.bind(this)}> Submit </button>
+      </div>
+      <div id='submit'>
+        <button className="btn btn-default btn-success" type='button' onClick={this.queryWeather.bind(this)}> Submit </button>
+      </div>
       </div>  
 
 

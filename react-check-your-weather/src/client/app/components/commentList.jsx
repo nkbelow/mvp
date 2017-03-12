@@ -1,19 +1,20 @@
 import React from 'react';
+import CommentListEntry from './commentListEntry.jsx';
 
 class CommentList extends React.Component {
   constructor(props) {
     super(props)
   }
 
-  getComments (e) {
-    this.props.getComments();
-  }
-
   render() {
+    console.log(this.props.comments);
     return (
-      <div> 
-      <button type='button' onClick={this.getComments.bind(this)}> Get Comments </button>
-      {this.props.comments}
+      <div id='commentList'> 
+      <ul>
+      {this.props.comments.map((comment) => {
+        return <CommentListEntry comment={comment.text} />
+      })}
+      </ul>
       </div>
     )
   }

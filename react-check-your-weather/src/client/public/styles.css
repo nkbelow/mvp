@@ -1,0 +1,23 @@
+html {
+   background: url(backgroundWeather.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  background: url(backgroundWeather.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1, #searchBar, #cityName, #commentMenu, #commentList, #submit, th, table {
+	text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}

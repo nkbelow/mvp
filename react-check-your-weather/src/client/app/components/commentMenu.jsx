@@ -12,6 +12,10 @@ class CommentMenu extends React.Component {
     }
   }
 
+  getComments (e) {
+    this.props.getComments();
+  }
+
   render() {
     return (
       <div id='commentMenu'> 
@@ -22,6 +26,7 @@ class CommentMenu extends React.Component {
         </textarea>
         </form>
         <input onClick={this.addComment.bind(this)} type='submit' />
+        <button type='button' onClick={this.getComments.bind(this)}> Get Comments </button>
         </div>
 
       
