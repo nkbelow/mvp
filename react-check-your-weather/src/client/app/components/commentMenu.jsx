@@ -25,8 +25,12 @@ class CommentMenu extends React.Component {
         <textarea name='comment' form='commentForm' ref='comment'>
         </textarea>
         </form>
-        <input onClick={this.addComment.bind(this)} type='submit' />
-        <button type='button' onClick={this.getComments.bind(this)}> Get Comments </button>
+        <div>
+        <button className='btn btn-default btn-success' onClick={this.addComment.bind(this)} type='button'>Add Your Comment</button>
+        </div>
+        <div>
+        <button type='button' className='btn btn-default btn-success' onClick={this.getComments.bind(this)}> Get Comments </button>
+        </div>
         </div>
 
       

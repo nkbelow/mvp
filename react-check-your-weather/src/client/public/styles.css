@@ -21,3 +21,8 @@ h1, #searchBar, #cityName, #commentMenu, #commentList, #submit, th, table {
 ul {
   list-style-type: none;
 }
+
+li {
+  font-family: inherit;
+  font-size: 1em;
+}
