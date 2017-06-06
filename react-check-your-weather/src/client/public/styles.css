@@ -14,7 +14,7 @@ body {
   background-size: cover;
 }
 
-h1, #searchBar, #cityName, #commentMenu, #commentList, #submit, th, table {
+h1, #searchBar, #cityName, #commentMenu, #commentList, #submit, th, table, .addTodoButton {
 	text-align: center;
 }
 

@@ -6,6 +6,7 @@ import CommentMenu from './components/commentMenu.jsx';
 import CommentList from './components/commentList.jsx';
 import $ from 'jquery';
 import apiKey from './weatherAPIKey';
+import TodoList from './components/todoList.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,8 +16,20 @@ class App extends React.Component {
       cityName: '',
       weatherData: [],
       comments: [],
-      showHead: false
+      showHead: false,
+      todos: []
     }
+  }
+
+  addTodo(todo) {
+    this.state.todos.push(text);
+    this.setState({
+      todos: this.state.todos
+    })
+  }
+
+  removeTodo() {
+
   }
 
   addWeatherResults(query) {
@@ -78,6 +91,7 @@ class App extends React.Component {
     <CommentList comments={this.state.comments} />
     <SearchBar addWeather={this.addWeatherResults.bind(this)}/>
     <Weather cityName={this.state.cityName} weatherResults={this.state.weatherData} headers={this.state.showHead} />
+    <TodoList />
     </div>
     )
   }
